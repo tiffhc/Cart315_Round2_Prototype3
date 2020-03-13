@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class KillPlayer : MonoBehaviour
 {
@@ -14,5 +15,14 @@ public class KillPlayer : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("Ai killed player"); 
+        if(other.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("GameOver_Lose", LoadSceneMode.Single); 
+        }
     }
 }
