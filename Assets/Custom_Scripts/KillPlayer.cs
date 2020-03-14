@@ -17,12 +17,14 @@ public class KillPlayer : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Ai killed player"); 
-        if(other.gameObject.CompareTag("Player"))
+        Debug.Log("Ai killed player");
+        if (other.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("GameOver_Lose", LoadSceneMode.Single); 
+            //Destroy(other.gameObject);
+            SceneManager.LoadScene("GameOver_Lose", LoadSceneMode.Single);
         }
     }
+ 
 }

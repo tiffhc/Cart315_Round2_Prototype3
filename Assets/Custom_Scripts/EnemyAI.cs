@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI; 
+using UnityEngine.AI;
+using UnityEngine.SceneManagement; 
 
 public class EnemyAI : MonoBehaviour
 {
@@ -19,4 +20,26 @@ public class EnemyAI : MonoBehaviour
         //continously find them
         monster.SetDestination(destination.transform.position);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Ai killed player");
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(other.gameObject);
+            SceneManager.LoadScene("GameOver_Lose", LoadSceneMode.Single);
+        }
+    }
+
+    /* 
+    private void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("Ai killed player");
+        if (other.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("GameOver_Lose", LoadSceneMode.Single);
+        }
+    }
+    */
+
 }
