@@ -26,7 +26,6 @@ public class EnemyAI : MonoBehaviour
         Debug.Log("Ai killed player");
         if (other.gameObject.CompareTag("Player"))
         {
-            Destroy(other.gameObject);
             SceneManager.LoadScene("GameOver_Lose", LoadSceneMode.Single);
         }
     }
