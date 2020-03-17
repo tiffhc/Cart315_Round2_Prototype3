@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement; 
 
-public class Restart : MonoBehaviour
+public class WinPlayer : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = true;
-        Screen.lockCursor = false; 
+        
     }
 
     // Update is called once per frame
@@ -17,9 +16,12 @@ public class Restart : MonoBehaviour
     {
         
     }
-
-    public void RestartGame()
+    private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("environment_scene", LoadSceneMode.Single); 
+        Debug.Log("Found treasure"); 
+        if(other.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("GameOver_Win", LoadSceneMode.Single); 
+        }
     }
 }
