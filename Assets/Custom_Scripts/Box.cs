@@ -19,21 +19,58 @@ public class Box : MonoBehaviour
         f_pressed = Input.GetKeyDown("f"); 
     }
 
-    private void OnCollisionStay(Collision collision)
+    
+    private void OnTriggerStay(Collider other)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Found box"); 
+            Debug.Log("Found box");
 
-            if(f_pressed)
+            if (f_pressed)
             {
-                Destroy(collision.gameObject);
-
                 //give the other object
-                inside.SetActive(true); 
+                inside.SetActive(true);
+                Destroy(this.gameObject); 
 
-                
+            }
+        }
+
+    }
+    
+
+    /*
+    private void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Found box");
+
+            if (f_pressed)
+            {
+                //give the other object
+                inside.SetActive(true);
+                Destroy(this.gameObject);
+
             }
         }
     }
+    */ 
+
+    /*
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if(hit.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Found box");
+
+            if (f_pressed)
+            {
+                //give the other object
+                inside.SetActive(true);
+                Destroy(this.gameObject);
+
+            }
+        }
+    }
+    */
 }

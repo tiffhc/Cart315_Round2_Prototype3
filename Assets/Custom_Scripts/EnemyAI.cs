@@ -23,11 +23,32 @@ public class EnemyAI : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Ai killed player");
+        //Debug.Log("Detected something - AI");
+
         if (other.gameObject.CompareTag("Player"))
         {
+            //Debug.Log("Ai killed player");
             SceneManager.LoadScene("GameOver_Lose", LoadSceneMode.Single);
         }
+
+        if (other.gameObject.CompareTag("Vegetable"))
+        {
+            //Debug.Log("Found vege - stopping AI");
+
+            monster.isStopped = true; 
+            float count = 50000000f;
+            if (count >= 0)
+            {
+                count -= Time.deltaTime;
+            }
+            else if (count < 0)
+            {
+                monster.isStopped = false; 
+            }
+
+        }
+
+
     }
 
     /* 
