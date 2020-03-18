@@ -1,14 +1,16 @@
 ﻿using UnityEngine.UI;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class HealthBar : MonoBehaviour
 {
     public Image currentHealth;
     public Text ratio;
 
-    private float hitpoint = 150f;
-    private float maxHitpoint = 150f;
+    private float hitpoint = 100f;
+    private float maxHitpoint = 100f;
+    private float minHitpoint = 0f;
 
     private void Start()
     {
@@ -29,6 +31,7 @@ public class HealthBar : MonoBehaviour
         {
             hitpoint = 0;
             Debug.Log("Dead!");
+            SceneManager.LoadScene("GameOver_Lose", LoadSceneMode.Single);
         }
 
         UpdateHealthBar();

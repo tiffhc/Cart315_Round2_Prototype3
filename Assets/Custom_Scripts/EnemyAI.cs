@@ -25,11 +25,11 @@ public class EnemyAI : MonoBehaviour
     {
         //Debug.Log("Detected something - AI");
 
-        if (other.gameObject.CompareTag("Player"))
-        {
-            //Debug.Log("Ai killed player");
-            SceneManager.LoadScene("GameOver_Lose", LoadSceneMode.Single);
-        }
+        //if (other.gameObject.CompareTag("Player"))
+        //{
+        //    //Debug.Log("Ai killed player");
+        //    SceneManager.LoadScene("GameOver_Lose", LoadSceneMode.Single);
+        //}
 
         if (other.gameObject.CompareTag("Vegetable"))
         {
