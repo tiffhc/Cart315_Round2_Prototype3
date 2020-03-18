@@ -10,7 +10,7 @@ public class HealthBar : MonoBehaviour
 
     private float hitpoint = 100f;
     private float maxHitpoint = 100f;
-    private float minHitpoint = 0f;
+
 
     private void Start()
     {

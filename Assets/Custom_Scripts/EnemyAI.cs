@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement; 
 
 public class EnemyAI : MonoBehaviour
 {
+    private float hitpoint = 100f;
+    private float maxHitpoint = 100f;
+    public Image enemySpeed;
+
     public NavMeshAgent monster; 
     public GameObject destination; 
     // Start is called before the first frame update
@@ -21,35 +26,50 @@ public class EnemyAI : MonoBehaviour
         monster.SetDestination(destination.transform.position);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void UpdateSpeedBar()
     {
-        //Debug.Log("Detected something - AI");
-
-        //if (other.gameObject.CompareTag("Player"))
-        //{
-        //    //Debug.Log("Ai killed player");
-        //    SceneManager.LoadScene("GameOver_Lose", LoadSceneMode.Single);
-        //}
-
-        if (other.gameObject.CompareTag("Vegetable"))
-        {
-            //Debug.Log("Found vege - stopping AI");
-
-            monster.isStopped = true; 
-            float count = 50000000f;
-            if (count >= 0)
-            {
-                count -= Time.deltaTime;
-            }
-            else if (count < 0)
-            {
-                monster.isStopped = false; 
-            }
-
-        }
-
-
+        float r = hitpoint / maxHitpoint;
+        enemySpeed.rectTransform.localScale = new Vector3(r, 1, 1);
     }
+
+    public void SpeedUpdate()
+    {
+        // code for increasing speed and decreasing speed
+
+        UpdateSpeedBar();
+    }
+
+
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    Debug.Log("Detected something - AI");
+
+    //    if (other.gameObject.CompareTag("Player"))
+    //    {
+    //        //Debug.Log("Ai killed player");
+    //        SceneManager.LoadScene("GameOver_Lose", LoadSceneMode.Single);
+    //    }
+
+    //    if (other.gameObject.CompareTag("Vegetable"))
+    //    {
+    //        //Debug.Log("Found vege - stopping AI");
+
+    //        monster.isStopped = true; 
+    //        float count = 50000000f;
+    //        if (count >= 0)
+    //        {
+    //            count -= Time.deltaTime;
+    //        }
+    //        else if (count < 0)
+    //        {
+    //            monster.isStopped = false; 
+    //        }
+
+    //    }
+
+
+    //}
 
     /* 
     private void OnCollisionEnter(Collision other)

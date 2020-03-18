@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 24858502}
   - component: {fileID: 24858501}
   m_Layer: 5
-  m_Name: speed
+  m_Name: speedtext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -713,6 +713,11 @@ PrefabInstance:
       propertyPath: destination
       value: 
       objectReference: {fileID: 1938315866}
+    - target: {fileID: 2660384928159524419, guid: 3717d65d0f842d0408ed07b0743bf6e6,
+        type: 3}
+      propertyPath: enemySpeed
+      value: 
+      objectReference: {fileID: 2029837616}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3717d65d0f842d0408ed07b0743bf6e6, type: 3}
 --- !u!1 &673718243
