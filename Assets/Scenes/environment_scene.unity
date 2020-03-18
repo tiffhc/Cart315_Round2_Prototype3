@@ -649,6 +649,26 @@ PrefabInstance:
       objectReference: {fileID: 1938315866}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3717d65d0f842d0408ed07b0743bf6e6, type: 3}
+--- !u!1 &738102973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2659402509540561265, guid: 3717d65d0f842d0408ed07b0743bf6e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 612950258}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &738102979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738102973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b2fbb3861ee340fe8b2f05fcdd84353, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDamaging: 0
+  damage: 20
 --- !u!1001 &816901477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1319,10 +1339,10 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 0
-  m_Color: {r: 0.5613208, g: 0.9106607, b: 1, a: 1}
-  m_Intensity: 2
-  m_Range: 5
-  m_SpotAngle: 30
+  m_Color: {r: 0.759434, g: 0.95059806, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 15
+  m_SpotAngle: 38
   m_InnerSpotAngle: 3
   m_CookieSize: 10
   m_Shadows:
@@ -1375,6 +1395,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1416649465}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1938315873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938315866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df1555d513c13459db235664bb817b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: {fileID: 1510648362}
+  ratio: {fileID: 2031860123}
 --- !u!1 &2031860121
 GameObject:
   m_ObjectHideFlags: 0
