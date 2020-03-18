@@ -686,8 +686,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0.24
-    height: 0.3
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -734,7 +734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b43420c3ab65486b90b6ccd74845e6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1524212540}
+  target: {fileID: 1938315872}
 --- !u!1 &738102973 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2659402509540561265, guid: 3717d65d0f842d0408ed07b0743bf6e6,
@@ -1154,6 +1154,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FPSController
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364229773307870785, guid: 541e8999d5496c34a805c17a47883a71,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 4364229773313018241, guid: 541e8999d5496c34a805c17a47883a71,
         type: 3}
