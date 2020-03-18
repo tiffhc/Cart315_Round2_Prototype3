@@ -817,6 +817,11 @@ PrefabInstance:
       propertyPath: vegetable
       value: 
       objectReference: {fileID: 1433311776419383}
+    - target: {fileID: 4364229773313018241, guid: 541e8999d5496c34a805c17a47883a71,
+        type: 3}
+      propertyPath: m_JumpSpeed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 541e8999d5496c34a805c17a47883a71, type: 3}
 --- !u!1 &1470110644
