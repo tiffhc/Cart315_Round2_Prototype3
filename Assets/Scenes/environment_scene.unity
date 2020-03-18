@@ -309,7 +309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 274578705}
   - component: {fileID: 274578706}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: player_icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -649,6 +649,7 @@ GameObject:
   - component: {fileID: 673718246}
   - component: {fileID: 673718245}
   - component: {fileID: 673718244}
+  - component: {fileID: 673718247}
   m_Layer: 0
   m_Name: minimapCam
   m_TagString: Untagged
@@ -685,8 +686,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
-    height: 1
+    width: 0.24
+    height: 0.3
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -695,7 +696,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -715,12 +716,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 673718243}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.8, y: 32.54, z: 1.71}
+  m_LocalPosition: {x: -1.61, y: 39.26, z: 0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &673718247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673718243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b43420c3ab65486b90b6ccd74845e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1524212540}
 --- !u!1 &738102973 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2659402509540561265, guid: 3717d65d0f842d0408ed07b0743bf6e6,
@@ -841,7 +855,7 @@ GameObject:
   m_Component:
   - component: {fileID: 832664255}
   - component: {fileID: 832664256}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: treasure_icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -921,7 +935,7 @@ GameObject:
   m_Component:
   - component: {fileID: 928580206}
   - component: {fileID: 928580207}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: enemy_icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
