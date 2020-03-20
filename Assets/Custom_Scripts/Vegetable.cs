@@ -14,7 +14,7 @@ public class Vegetable : MonoBehaviour
 
     private NavMeshAgent temp;
 
-    private float time = 5f; 
+    public float time = 1000f; 
     // Start is called before the first frame update
     void Start()
     {
@@ -60,9 +60,14 @@ public class Vegetable : MonoBehaviour
 
             temp.isStopped = true;
 
-            StartCoroutine(countDown());
+            //StartCoroutine(countDown(temp));
 
-            Debug.Log("back into here");
+            while (time > 0)
+            {
+                time -= Time.deltaTime;
+                Debug.Log(time);
+            }
+            //Debug.Log("back into here");
 
             temp.isStopped = false; 
             
@@ -74,20 +79,22 @@ public class Vegetable : MonoBehaviour
         }
     }
     
-    IEnumerator countDown()
+    /*
+    IEnumerator countDown(NavMeshAgent temp)
     {
         Debug.Log("Inside countdown"); 
 
-        /*
+   
+        yield return new WaitForSeconds(time);
+        
         while(time > 0)
         {
             time -= Time.deltaTime;
             Debug.Log(time); 
         }
-        */ 
-        yield return new WaitForSeconds(time);
-       
-    }
 
-    
+    }
+    */ 
+
+
 }
