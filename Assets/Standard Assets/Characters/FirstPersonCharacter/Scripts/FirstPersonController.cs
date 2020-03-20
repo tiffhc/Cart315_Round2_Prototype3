@@ -42,7 +42,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
-        public GameObject vegetable; 
+        public GameObject vegetable;
+        private Collider v;
 
         // Use this for initialization
         private void Start()
@@ -57,6 +58,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+
+            v = vegetable.GetComponent<Collider>(); 
         }
 
 
@@ -97,7 +100,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     //translate downwards
                     //vegetable.transform.position.Set(-18f, 0.2f, -4.16f);
                     vegetable.transform.Translate(new Vector3(0, 0, 1)); 
-                    vegetable.SetActive(true); 
+                    vegetable.SetActive(true);
+                    v.isTrigger = false; 
                 }
             }
         }

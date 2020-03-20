@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI; 
 
 public class Vegetable : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class Vegetable : MonoBehaviour
     public float speed = 1000f; 
     //public GameObject vege; 
     public Transform p; //player 
+
+    private NavMeshAgent temp;
+
+    private float time = 5f; 
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +25,7 @@ public class Vegetable : MonoBehaviour
     void FixedUpdate()
     {
         f_pressed = Input.GetKeyDown("f");
-
+       
         /*
         e_pressed = Input.GetKeyDown("e"); 
 
@@ -31,11 +36,24 @@ public class Vegetable : MonoBehaviour
             //transform.position = Vector3.MoveTowards(transform.position, p.position, speed * Time.deltaTime); 
             //Instantiate(vege, p.position, Quaternion.identity); 
         }
-        */ 
+        */
 
     }
 
-  
+    private void Update()
+    {
+        time -= Time.deltaTime;
+        Debug.Log(time); 
+        if(time > 0)
+        {
+            Update(); 
+        }
+        else
+        {
+            temp.isStopped = false; 
+        }
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
@@ -45,6 +63,20 @@ public class Vegetable : MonoBehaviour
             {
                 this.gameObject.SetActive(false); 
             }
+        }
+
+        if(other.gameObject.CompareTag("AI"))
+        {
+            Debug.Log("AI ennemy detected");
+            temp = other.gameObject.GetComponent<NavMeshAgent>();
+
+            temp.isStopped = true; 
+           
+            /*
+            temp.speed = 0;
+            temp.angularSpeed = 0;
+            temp.acceleration = 0; 
+            */ 
         }
     }
 }

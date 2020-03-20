@@ -12,7 +12,9 @@ public class EnemyAI : MonoBehaviour
     public Image enemySpeed;
 
     public NavMeshAgent monster; 
-    public GameObject destination; 
+    public GameObject destination;
+
+    public float time = 5f; 
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +41,22 @@ public class EnemyAI : MonoBehaviour
         UpdateSpeedBar();
     }
 
+    /*
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log("STOPP"); 
+        if(other.gameObject.CompareTag("Vegetable"))
+        {
+            Debug.Log("Detected vegetable");
 
+            monster.speed = 0;
+            monster.angularSpeed = 0;
+            monster.acceleration = 0;
+
+      
+        }
+    }
+    */ 
 
     //private void OnTriggerEnter(Collider other)
     //{
