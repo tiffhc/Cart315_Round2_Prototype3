@@ -40,19 +40,7 @@ public class Vegetable : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        time -= Time.deltaTime;
-        Debug.Log(time); 
-        if(time > 0)
-        {
-            Update(); 
-        }
-        else
-        {
-            temp.isStopped = false; 
-        }
-    }
+   
 
     private void OnTriggerStay(Collider other)
     {
@@ -70,8 +58,14 @@ public class Vegetable : MonoBehaviour
             Debug.Log("AI ennemy detected");
             temp = other.gameObject.GetComponent<NavMeshAgent>();
 
-            temp.isStopped = true; 
-           
+            temp.isStopped = true;
+
+            StartCoroutine(countDown());
+
+            Debug.Log("back into here");
+
+            temp.isStopped = false; 
+            
             /*
             temp.speed = 0;
             temp.angularSpeed = 0;
@@ -79,4 +73,21 @@ public class Vegetable : MonoBehaviour
             */ 
         }
     }
+    
+    IEnumerator countDown()
+    {
+        Debug.Log("Inside countdown"); 
+
+        /*
+        while(time > 0)
+        {
+            time -= Time.deltaTime;
+            Debug.Log(time); 
+        }
+        */ 
+        yield return new WaitForSeconds(time);
+       
+    }
+
+    
 }
