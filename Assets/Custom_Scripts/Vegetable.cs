@@ -58,19 +58,34 @@ public class Vegetable : MonoBehaviour
             Debug.Log("AI ennemy detected");
             temp = other.gameObject.GetComponent<NavMeshAgent>();
 
+            //temp.Stop(); 
             temp.isStopped = true;
 
             //StartCoroutine(countDown(temp));
 
+            /*
             while (time > 0)
             {
                 time -= Time.deltaTime;
                 Debug.Log(time);
             }
+            */
+
+            while(time > 0)
+            {
+                time -= 1f;
+                Debug.Log(time);
+            }
+          
+         
             //Debug.Log("back into here");
 
             temp.isStopped = false; 
-            
+
+            //temp.Resume(); 
+        
+        
+
             /*
             temp.speed = 0;
             temp.angularSpeed = 0;
