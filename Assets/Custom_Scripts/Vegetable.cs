@@ -88,8 +88,7 @@ public class Vegetable : MonoBehaviour
             //temp.angularSpeed = 0;
            
            temp.speed = 0.7f;
-           
-      
+
         }
     }
     
