@@ -59,7 +59,7 @@ public class Vegetable : MonoBehaviour
             temp = other.gameObject.GetComponent<NavMeshAgent>();
 
             //temp.Stop(); 
-            temp.isStopped = true;
+            //temp.isStopped = true;
 
             //StartCoroutine(countDown(temp));
 
@@ -71,26 +71,24 @@ public class Vegetable : MonoBehaviour
             }
             */
 
+            /*
             while(time > 0)
             {
                 time -= 1f;
                 Debug.Log(time);
             }
-          
-         
+            */
+
             //Debug.Log("back into here");
 
-            temp.isStopped = false; 
+            //temp.isStopped = false; 
 
             //temp.Resume(); 
-        
-        
 
-            /*
-            temp.speed = 0;
-            temp.angularSpeed = 0;
-            temp.acceleration = 0; 
-            */ 
+            //temp.angularSpeed = 0;
+           
+           temp.speed = 0.7f;
+
         }
     }
     
