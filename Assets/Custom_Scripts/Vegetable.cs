@@ -89,9 +89,11 @@ public class Vegetable : MonoBehaviour
            
            temp.speed = 0.7f;
 
+           this.gameObject.SetActive(false); 
         }
     }
-    
+
+
     /*
     IEnumerator countDown(NavMeshAgent temp)
     {
@@ -107,7 +109,7 @@ public class Vegetable : MonoBehaviour
         }
 
     }
-    */ 
+    */
 
 
 }
